@@ -1,10 +1,9 @@
 import './App.css';
+import {Background } from './components/Background/Background'
 
 function App() {
   return (
-    <div>
-      Hello world
-    </div>
+    <Background />
   );
 }
 
