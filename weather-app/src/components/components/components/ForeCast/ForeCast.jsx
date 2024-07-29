@@ -14,7 +14,7 @@ export const ForeCast = () => {
     }
 
     return (
-        <div className='forecast-container flex justify-around col-span-4-7 row-span-2-3'>
+        <div className='forecast-container flex justify-around col-span-4-7 row-span-2-4'>
             <div className="infos flex flex-col items-center justify-center">
                 <div className="row">
                     <WeekOfDay weekofday={'Monday'} color={moke.color}/>

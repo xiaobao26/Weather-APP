@@ -28,10 +28,12 @@ module.exports = {
         'span-2-7': '2 / span 6',
         'span-2-3': '2 / span 2',
         'span-4-7': '4 / span 4',
+        'span-4-5': '4 / span 2',
       },
       gridRow: {
         'span-2-5': '2 / span 4',
-        'span-2-3': '2 / span 2',
+        'span-2-4': '2 / span 2',
+        'span-4-5': '4 / span 1'
       },
       backgroundImage: {
         'hero-pattern':
