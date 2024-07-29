@@ -27,9 +27,11 @@ module.exports = {
       gridColumn: {
         'span-2-7': '2 / span 6',
         'span-2-3': '2 / span 2',
+        'span-4-7': '4 / span 4',
       },
       gridRow: {
         'span-2-5': '2 / span 4',
+        'span-2-3': '2 / span 2',
       },
       backgroundImage: {
         'hero-pattern':

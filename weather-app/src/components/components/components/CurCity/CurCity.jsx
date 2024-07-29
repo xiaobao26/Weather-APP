@@ -27,10 +27,10 @@ export const CurCity = () => {
     return (
         <div className="col-span-2-3 row-span-2-5 relative flex flex-col rounded-3xl bg-gradient-to-r from-cur-sky to-cur-floor ">
             <img className='absolute' src={curBg} alt="background image absolute" />
-            <Date date={moke.date}/>
+            <Date date={moke.date} color={'#fff'}/>
             
             <div className='relative w-full h-full flex flex-col justify-around items-center z-10 text-white'>
-                <CityName cityName={moke.cityname}/>
+                <CityName cityName={moke.cityname} color={'#ffff'}/>
                 <div className='flex flex-col w-full items-center justify-center'>
                     <Temperature temperature={moke.temperature}/>
                     <TemperatureRange range={moke.range} />

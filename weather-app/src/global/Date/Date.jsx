@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Date = ({ date }) => {
+export const Date = ({ date, color }) => {
     return (
-        <h5 className='font-thin text-xs relative text-white p-4 '>
+        <h5 className='font-thin text-xs relative p-4 ' style={{color: `${color}`}}>
             {date}
         </h5>
     )
