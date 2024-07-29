@@ -6,6 +6,9 @@ module.exports = {
       'alimama': ['AlimamaFangYuanTiVF-Square', 'sans-serif'],
     },
     extend: {
+      width: {
+        '7/8': '90%',
+      },
       colors: {
         'sky': '#8CA9F1',
         'floor': '#665CDF',
@@ -19,7 +22,7 @@ module.exports = {
       },
       gridTemplateRows: {
         'container': '0.6fr repeat(4, minmax(0, 1fr)) 0.6fr',
-        'card': '0.15fr repeat(4, minmax(0, 1fr)) 0.15fr'
+        'card': '0.15fr repeat(4, minmax(0, 1fr)) 0.15fr',
       },
       gridColumn: {
         'span-2-7': '2 / span 6',
