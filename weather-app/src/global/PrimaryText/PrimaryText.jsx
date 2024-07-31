@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const CityName = ({ cityName, color }) => {
+export const PrimaryText = ({ text, color }) => {
     return (
         <h1 className='font-medium text-2xl' style={{color: `${color}`}}>
-            {cityName}
+            {text}
         </h1>
     )
 }

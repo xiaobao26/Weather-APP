@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const WeekOfDay = ({ weekofday, color }) => {
+export const SecondaryText = ({ text, color }) => {
     return (
         <h1 className='font-medium text-xl font-medium' style={{color: `${color}`}}>
-            {weekofday}
+            {text}
         </h1>
     )
 }

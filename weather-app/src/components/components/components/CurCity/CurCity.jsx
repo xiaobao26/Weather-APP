@@ -1,7 +1,7 @@
 import React from 'react';
 import curBg from '../../../../assets/background/Cloudy_day_background.png';
 import { Date } from '../../../../global/Date/Date';
-import { CityName } from '../../../../global/CityName/CityName';
+import { PrimaryText } from '../../../../global/PrimaryText/PrimaryText';
 import { Temperature } from '../../../../global/Temperature/Temperature';
 import { TemperatureRange } from '../../../../global/TemperatureRange/TemperatureRange';
 import { WeatherIcon } from '../../../../global/WeatherIcon/WeatherIcon';
@@ -30,7 +30,7 @@ export const CurCity = () => {
             <Date date={moke.date} color={'#fff'}/>
             
             <div className='relative w-full h-full flex flex-col justify-around items-center z-10 text-white'>
-                <CityName cityName={moke.cityname} color={'#ffff'}/>
+                <PrimaryText text={moke.cityname} color={'#ffff'}/>
                 <div className='flex flex-col w-full items-center justify-center'>
                     <Temperature temperature={moke.temperature}/>
                     <TemperatureRange range={moke.range} />

@@ -14,6 +14,14 @@ module.exports = {
         'floor': '#665CDF',
         'cur-sky': '#7B89E8',
         'cur-floor': '#5F4CDC',
+        'history-1-sky': '#88AEF5',
+        'history-1-floor': '#4F84EE',
+        'history-2-sky': '#8EB0F3',
+        'history-2-floor': '#588BEF',
+        'history-3-sky': '#8195F3',
+        'history-3-floor': '#4853CF',
+        'history-4-sky': '#8584E5',
+        'history-4-floor': '#7F7AE5',
       },
       gridTemplateColumns: {
         'container': '0.6fr repeat(6, minmax(0, 1fr)) 0.6fr',
@@ -33,7 +41,8 @@ module.exports = {
       gridRow: {
         'span-2-5': '2 / span 4',
         'span-2-4': '2 / span 2',
-        'span-4-5': '4 / span 1'
+        'span-4-5': '4 / span 1',
+        'span-5-6': '5 / span 1',
       },
       backgroundImage: {
         'hero-pattern':
