@@ -8,9 +8,11 @@ import { SearchHistory } from './components/components/components/SearchHistory/
 
 import { useEffect, useState } from 'react';
 import { getCurCity } from './api/GetCurCity';
+import { getForeCast } from './api/GetForeCast';
 
 
 function App() {
+  const [input, setInput] = useState('');
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
   const [temperature, setTemperature] = useState('');
@@ -18,11 +20,28 @@ function App() {
   const [speed, setSpeed] = useState('');
   const [pm2_5, setPm2_5] = useState('');
   const [flee_like, setFlee_like] = useState('');
-  const [weathericon, setWeathericon] = useState('');
+  const [weatherIcon, setWeatherIcon] = useState('');
+  const [search, setSearch] = useState(false);
 
-  const handleCityName = (cityName) => {
-    setCity(cityName);
+  // forecast 
+  const [dates, setDates] = useState([]);
+  const [weatherIcons, setWeatherIcons] = useState([]);
+  const [minTemperature, setMinTemperature] = useState([]);
+  const [maxTemperature, setMaxTemperature] = useState([]);
+
+  // history
+  const [history, setHistory] = useState([]);
+
+  const handleInput = (cityname) => {
+    setInput(cityname);
   }
+
+  const handleSearch = () => {
+    setCity(input);
+    setSearch(preState => !preState)
+  }
+  
+
 
 
   useEffect(() => {
@@ -32,20 +51,33 @@ function App() {
         .then((data) => {
           console.log(data)
           setDate(data.location.localtime);
-          setTemperature(data.current.temp_c);
+          setTemperature(Math.round(data.current.temp_c));
           setHumanity(data.current.humidity);
           setSpeed(Math.round(data.current.wind_kph));
           setPm2_5(data.current.air_quality.pm2_5);
           setFlee_like(Math.round(data.current.feelslike_c));
-          setWeathericon(data.current.condition.icon);
-          console.log(data.condition.icon);
-          
+          setWeatherIcon(data.current.condition.icon);
         })
         .catch((error) => {
           console.log(error)
-        })
+        });
+      
+
+      getForeCast(city)
+      .then((data) => {
+        console.log(data)
+        setDates(data.forecast.forecastday.slice(1, 5).map((arr) => arr.date.slice(5, 10)));
+        setWeatherIcons(data.forecast.forecastday.slice(1, 5).map((arr) => arr.day.condition.icon));
+        setMinTemperature(data.forecast.forecastday.slice(1, 5).map((arr) => Math.round(arr.day.mintemp_c)));
+        setMaxTemperature(data.forecast.forecastday.slice(1, 5).map((arr) => Math.round(arr.day.maxtemp_c)));
+
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
     }
-  }, [city])
+  }, [city,search])
 
   return (
     <Background>
@@ -58,12 +90,21 @@ function App() {
           speed={speed}
           pm2_5={pm2_5}
           flee_like={flee_like}
-          weathericon={weathericon}
+          weathericon={weatherIcon}/>
+
+        <ForeCast
+          dates={dates}
+          weatherIcons={weatherIcons}
+          minTemperature={minTemperature}
+          maxTemperature={maxTemperature}/>
+
+        <SearchBar 
+          onInput={handleInput}
+          onSearch={handleSearch}/>
+
+        <SearchHistory 
 
         />
-        <ForeCast />
-        <SearchBar cityName={handleCityName} />
-        <SearchHistory />
       </WeatherCard>
     </Background>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import curBg from '../../../../assets/background/Cloudy_day_background.png';
-import { Date } from '../../../../global/Date/Date';
+import { ThirdText } from '../../../../global/ThirdText/ThirdText';
 import { PrimaryText } from '../../../../global/PrimaryText/PrimaryText';
 import { Temperature } from '../../../../global/Temperature/Temperature';
 import { TemperatureRange } from '../../../../global/TemperatureRange/TemperatureRange';
@@ -16,7 +16,7 @@ export const CurCity = ({ cityname, date, temperature, humanity, speed, pm2_5, f
     return (
         <div className="col-span-2-3 row-span-2-5 relative flex flex-col rounded-3xl bg-gradient-to-r from-cur-sky to-cur-floor ">
             <img className='absolute' src={curBg} alt="background image absolute" />
-            <Date date={date} color={'#fff'}/>
+            <ThirdText text={date} color={'#fff'}/>
             
             <div className='relative w-full h-full flex flex-col justify-around items-center z-10 text-white'>
                 <PrimaryText text={cityname} color={'#ffff'}/>

@@ -1,17 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
 
-export const SearchBar = ({ cityName }) => {
+export const SearchBar = ({ onInput, onSearch }) => {
 
-    const [input, setInput] = useState('');
+
     
     const handleInput = (e) => {
         e.preventDefault();
-        setInput(e.target.value);
+        const city = e.target.value
+        onInput(city);
     }
 
     const handleButtonClick = () => {
-        cityName(input);
+        onSearch();
     }
 
     return (
