@@ -30,6 +30,7 @@ function App() {
   const [maxTemperature, setMaxTemperature] = useState([]);
 
   // history
+  // icon, cityName, temperature
   const [history, setHistory] = useState([]);
 
   const handleInput = (cityname) => {
@@ -40,10 +41,18 @@ function App() {
     setCity(input);
     setSearch(preState => !preState)
   }
+
+
+  const handleSearchHistory = (city, data) => {
+    const newArray = [data.current.condition.icon, city, Math.round(data.current.temp_c)];
+    setHistory(prevHistory => {
+      const updateHistory = [newArray, ...prevHistory].slice(0, 4);
+      return updateHistory;
+    })
+  }
+
+
   
-
-
-
   useEffect(() => {
     if (city) {
       // current city data
@@ -57,6 +66,7 @@ function App() {
           setPm2_5(data.current.air_quality.pm2_5);
           setFlee_like(Math.round(data.current.feelslike_c));
           setWeatherIcon(data.current.condition.icon);
+          handleSearchHistory(city, data);
         })
         .catch((error) => {
           console.log(error)
@@ -103,7 +113,7 @@ function App() {
           onSearch={handleSearch}/>
 
         <SearchHistory 
-
+          history={history}
         />
       </WeatherCard>
     </Background>
