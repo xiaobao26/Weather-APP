@@ -1,5 +1,4 @@
 import React from 'react';
-import curBg from '../../../../assets/background/Cloudy_day_background.png';
 import { ThirdText } from '../../../../global/ThirdText/ThirdText';
 import { PrimaryText } from '../../../../global/PrimaryText/PrimaryText';
 import { Temperature } from '../../../../global/Temperature/Temperature';

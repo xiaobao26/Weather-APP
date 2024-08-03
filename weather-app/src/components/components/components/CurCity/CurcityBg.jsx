@@ -31,6 +31,6 @@ export const CurcityBg = ({ weatherInfo }) => {
     const bg = getBgImage(weatherInfo);
 
     return (
-        <img className='absolute' src={bg} alt="background image absolute" />
+        <img className='absolute' src={bg} alt="background image" />
     )
 }

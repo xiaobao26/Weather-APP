@@ -112,7 +112,7 @@ function App() {
       })
 
     }
-  }, [city,search])
+  }, [city,search, flag])
 
   return (
     <Background>
