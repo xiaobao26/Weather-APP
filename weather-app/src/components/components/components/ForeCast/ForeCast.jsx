@@ -2,7 +2,6 @@ import React from 'react';
 import { ThirdText } from '../../../../global/ThirdText/ThirdText';
 import { SecondaryText } from '../../../../global/SecondaryText/SecondaryText';
 import { WeatherIcon } from '../../../../global/WeatherIcon/WeatherIcon';
-import Rain from '../../../../assets/weather_icon/Rain.png';
 import { TemperatureRange } from '../../../../global/TemperatureRange/TemperatureRange';
 
 export const ForeCast = ({ dates, weatherIcons, minTemperature, maxTemperature }) => {
