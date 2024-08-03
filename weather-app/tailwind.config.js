@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
+  screens: {
+    'tablet': '640px',
+    'laptop': '1024px',
+    'desktop': '1280px',
+  },
   theme: {
     fontFamily: {
       'alimama': ['AlimamaFangYuanTiVF-Square', 'sans-serif'],
@@ -29,7 +34,7 @@ module.exports = {
 
       },
       gridTemplateRows: {
-        'container': '0.6fr repeat(4, minmax(0, 1fr)) 0.6fr',
+        'container': '2.0fr repeat(4, minmax(0, 1fr)) 2.0fr',
         'card': '0.15fr repeat(4, minmax(0, 1fr)) 0.15fr',
       },
       gridColumn: {
