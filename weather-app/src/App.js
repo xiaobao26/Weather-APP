@@ -27,6 +27,9 @@ function App() {
   const [flee_like, setFlee_like] = useState('');
   const [weatherIcon, setWeatherIcon] = useState('');
   const [search, setSearch] = useState(false);
+  
+  // current city
+  const [descript, setDescript] = useState('');
 
   // forecast 
   const [dates, setDates] = useState([]);
@@ -79,7 +82,7 @@ function App() {
       // current city data
       getCurCity(city)
         .then((data) => {
-          // console.log(data)
+          console.log('here:',data)
           setDate(data.location.localtime);
           setTemperature(Math.round(data.current.temp_c));
           setHumanity(data.current.humidity);
@@ -88,6 +91,7 @@ function App() {
           setFlee_like(Math.round(data.current.feelslike_c));
           setWeatherIcon(data.current.condition.icon);
           handleSearchHistory(city, data);
+          setDescript(data.current.condition.text);
         })
         .catch((error) => {
           console.log(error)
@@ -121,7 +125,8 @@ function App() {
           speed={speed}
           pm2_5={pm2_5}
           flee_like={flee_like}
-          weathericon={weatherIcon}/>
+          weathericon={weatherIcon}
+          descript={descript}/>
 
         <ForeCast
           dates={dates}

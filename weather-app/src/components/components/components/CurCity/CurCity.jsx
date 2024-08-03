@@ -10,8 +10,9 @@ import humidityIcon from '../../../../assets/meta_icon/humidity.svg';
 import pmIcon from '../../../../assets/meta_icon/PM2.5.svg';
 import somatosensoryTemperatureIcon from '../../../../assets/meta_icon/Somatosensory_temperature.svg';
 import speedIcon from '../../../../assets/meta_icon/wind_speed.svg';
+import { CurcityBg } from './CurcityBg';
 
-export const CurCity = ({ cityname, date, temperature, humanity, speed, pm2_5, flee_like, weathericon }) => {
+export const CurCity = ({ cityname, date, temperature, humanity, speed, pm2_5, flee_like, weathericon, descript }) => {
 
     const environmentIcons = [humidityIcon, pmIcon, somatosensoryTemperatureIcon, speedIcon];
     const environmentData = [
@@ -27,7 +28,7 @@ export const CurCity = ({ cityname, date, temperature, humanity, speed, pm2_5, f
                         xl:w-72 lg:w-64 md:w-52  
                         relative flex flex-col rounded-3xl
                         bg-gradient-to-r from-cur-sky to-cur-floor ">
-            <img className='absolute' src={curBg} alt="background image absolute" />
+            <CurcityBg weatherInfo={descript}/>
             <ThirdText text={date} color={'#fff'} />
 
             <div className='relative w-full h-full flex flex-col justify-around items-center z-10 text-white'>
@@ -51,20 +52,3 @@ export const CurCity = ({ cityname, date, temperature, humanity, speed, pm2_5, f
     );
 };
 
-
-{/* <div className="info">
-        <img src={humidityIcon} alt="humanity icon" />
-        <div className='text-black text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{humanity}%</div>
-    </div>
-    <div className="info">
-        <img src={speedIcon} alt="humanity icon" />
-        <div className='text-black'>{speed}km/h</div>
-    </div>
-    <div className="info">
-        <img src={pmIcon} alt="humanity icon" />
-        <div className='text-black'>{pm2_5}&mu;g</div>
-    </div>
-    <div className="info">
-        <img src={somatosensoryTemperatureIcon} alt="humanity icon" />
-        <div className='text-black'>{flee_like}°</div>
-    </div> */}
