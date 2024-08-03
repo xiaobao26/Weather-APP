@@ -18,6 +18,7 @@ module.exports = {
       maxHeight: {
         'customer-lg': '500px',
       },
+
       colors: {
         'sky': '#8CA9F1',
         'floor': '#665CDF',

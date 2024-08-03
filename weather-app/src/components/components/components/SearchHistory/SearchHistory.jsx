@@ -23,7 +23,7 @@ export const SearchHistory = ({ history }) => {
                             <img className='absolute w-full h-full z-0 opacity-20' src={bg} alt="city view" />
                             {isHistoryInfoAvailable ? (
                                 <>
-                                    <div className="relative weather-icon w-14 h-14 lg:max-h-8 lg:max-w-12">
+                                    <div className="relative weather-icon w-14 h-14 lg:max-h-8 lg:max-w-12 md:max-h-10 md:max-w-12">
                                         <WeatherIcon iconURL={historyInfo[0]} />
                                     </div>
                                     <div className="relative flex flex-col justify-center items-center">
