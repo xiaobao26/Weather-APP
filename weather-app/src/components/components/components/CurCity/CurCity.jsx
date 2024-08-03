@@ -4,7 +4,6 @@ import { PrimaryText } from '../../../../global/PrimaryText/PrimaryText';
 import { Temperature } from '../../../../global/Temperature/Temperature';
 import { TemperatureRange } from '../../../../global/TemperatureRange/TemperatureRange';
 import { WeatherIcon } from '../../../../global/WeatherIcon/WeatherIcon';
-import Icon from '../../../../assets/weather_icon/Cloudy.png';
 import humidityIcon from '../../../../assets/meta_icon/humidity.svg';
 import pmIcon from '../../../../assets/meta_icon/PM2.5.svg';
 import somatosensoryTemperatureIcon from '../../../../assets/meta_icon/Somatosensory_temperature.svg';
