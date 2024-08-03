@@ -9,9 +9,11 @@ import { SearchHistory } from './components/components/components/SearchHistory/
 import { useEffect, useState } from 'react';
 import { getCurCity } from './api/GetCurCity';
 import { getForeCast } from './api/GetForeCast';
+import { getDateFromIPAddress} from './api/GetDateFromIPAddress';
 
 
 function App() {
+  const [flag, setFlag] = useState(true);
   const [input, setInput] = useState('');
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
@@ -54,6 +56,20 @@ function App() {
 
   
   useEffect(() => {
+    if (flag) {
+      setFlag(false);
+      getDateFromIPAddress()
+      .then((data) => {
+        console.log(data);
+        setCity(data.city);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
+    }
+    
+
     if (city) {
       // current city data
       getCurCity(city)
