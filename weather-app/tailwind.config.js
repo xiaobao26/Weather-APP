@@ -2,9 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   screens: {
-    'tablet': '640px',
-    'laptop': '1024px',
-    'desktop': '1280px',
+    'sm': '640px',
+    'md': '768px',
+    'lg': '1024px',
+    'xl': '1280px',
   },
   theme: {
     fontFamily: {
@@ -29,12 +30,12 @@ module.exports = {
         'history-4-floor': '#7F7AE5',
       },
       gridTemplateColumns: {
-        'container': '0.6fr repeat(6, minmax(0, 1fr)) 0.6fr',
+        'container': '0.4fr repeat(6, minmax(0, 1fr)) 0.4fr',
         'card': '0.1fr repeat(6, minmax(0, 1fr)) 0.1fr',
 
       },
       gridTemplateRows: {
-        'container': '2.0fr repeat(4, minmax(0, 1fr)) 2.0fr',
+        'container': '1.2fr repeat(4, minmax(0, 1fr)) 1.2fr',
         'card': '0.15fr repeat(4, minmax(0, 1fr)) 0.15fr',
       },
       gridColumn: {

@@ -24,7 +24,7 @@ export const ForeCast = ({ dates, weatherIcons, minTemperature, maxTemperature }
             {console.log(dates.length)}
             {dates.map((date, index) => (
                 <div key={index} className="infos flex flex-col items-center justify-center">
-                    <div className="row">
+                    <div className="row flex flex-col justify-center items-center">
                         <SecondaryText text={getDaysOfWeek(date)} color={moke.color} />
                         <ThirdText text={dates[index]} color={moke.color} />
                     </div>
