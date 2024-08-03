@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   screens: {
-    'sm': '640px',
+    'phone': '430px',
     'md': '768px',
     'lg': '1024px',
     'xl': '1280px',
@@ -14,6 +14,9 @@ module.exports = {
     extend: {
       width: {
         '7/8': '90%',
+      },
+      minWidth: {
+        'customer-phone': '400px',
       },
       maxHeight: {
         'customer-lg': '500px',
@@ -53,6 +56,7 @@ module.exports = {
         'span-2-4': '2 / span 2',
         'span-4-5': '4 / span 1',
         'span-5-6': '5 / span 1',
+        'span-2-3': '2 / span 1',
       },
       backgroundImage: {
         'hero-pattern':

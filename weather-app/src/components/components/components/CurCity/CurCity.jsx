@@ -23,7 +23,10 @@ export const CurCity = ({ cityname, date, temperature, humanity, speed, pm2_5, f
     ]
 
     return (
-        <div className="xl:w-72 lg:w-64 md:w-52 col-span-2-3 row-span-2-5 relative flex flex-col rounded-3xl bg-gradient-to-r from-cur-sky to-cur-floor ">
+        <div className="col-span-2-3 row-span-2-5 
+                        xl:w-72 lg:w-64 md:w-52  
+                        relative flex flex-col rounded-3xl
+                        bg-gradient-to-r from-cur-sky to-cur-floor ">
             <img className='absolute' src={curBg} alt="background image absolute" />
             <ThirdText text={date} color={'#fff'} />
 
@@ -37,7 +40,7 @@ export const CurCity = ({ cityname, date, temperature, humanity, speed, pm2_5, f
 
                 <div className="infos flex items-center justify-around w-7/8 h-1/6 rounded-3xl" style={{ backgroundColor: '#F2F3FD' }}>
                     {environmentIcons.map((icon, index) => (
-                        <div className="info">
+                        <div className="info" key={index}>
                             <img className='xl:w-6 lg:w-5 md:w-4 sm:w-3' src={icon} alt={`${environmentData[index].label} icon`} />
                             <div className='text-black text-xs sm:text-sm md:text-xs lg:text-sm xl:text-base'>{environmentData[index].value}</div>
                         </div>

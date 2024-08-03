@@ -10,6 +10,9 @@ import { useEffect, useState } from 'react';
 import { getCurCity } from './api/GetCurCity';
 import { getForeCast } from './api/GetForeCast';
 import { getDateFromIPAddress} from './api/GetDateFromIPAddress';
+import axios from 'axios';
+
+
 
 
 function App() {
@@ -35,6 +38,7 @@ function App() {
   // icon, cityName, temperature
   const [history, setHistory] = useState([]);
 
+
   const handleInput = (cityname) => {
     setInput(cityname);
   }
@@ -57,10 +61,11 @@ function App() {
   
   useEffect(() => {
     if (flag) {
+      console.log(axios.isCancel('something'));
       setFlag(false);
       getDateFromIPAddress()
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCity(data.city);
       })
       .catch((error) => {
@@ -74,7 +79,7 @@ function App() {
       // current city data
       getCurCity(city)
         .then((data) => {
-          console.log(data)
+          // console.log(data)
           setDate(data.location.localtime);
           setTemperature(Math.round(data.current.temp_c));
           setHumanity(data.current.humidity);
@@ -91,7 +96,7 @@ function App() {
 
       getForeCast(city)
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         setDates(data.forecast.forecastday.slice(1, 5).map((arr) => arr.date.slice(5, 10)));
         setWeatherIcons(data.forecast.forecastday.slice(1, 5).map((arr) => arr.day.condition.icon));
         setMinTemperature(data.forecast.forecastday.slice(1, 5).map((arr) => Math.round(arr.day.mintemp_c)));
